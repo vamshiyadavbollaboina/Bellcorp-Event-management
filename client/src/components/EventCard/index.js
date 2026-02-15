@@ -9,7 +9,6 @@ const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 const EventCard = ({ event }) => {
     const [loading, setLoading] = useState(false);
-    const API_BASE_URL = process.env.REACT_APP_API_URL;
     const onRegister = async (e) => {
         e.preventDefault() 
         
