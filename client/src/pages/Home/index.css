@@ -1,0 +1,136 @@
+.home-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #6c5ce7;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 span {
+    color: #ffeaa7;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.search-box, .category-box {
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.icon-main {
+    color: #6c5ce7;
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.search-box input, .category-box select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: #2d3436;
+}
+
+.events-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.no-results-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 2px solid #f1f3f5;
+    text-align: center;
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+    color: #b2bec3;
+}
+
+.no-results-content h2 {
+    color: #2d3436;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.no-results-content p {
+    color: #636e72;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.clear-search-btn {
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.clear-search-btn:hover {
+    background: #5849d1;
+}
+
+.center-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+    gap: 15px;
+    color: #636e72;
+}
+
+@media (max-width: 768px) {
+    .search-bar-container {
+        flex-direction: column;
+    }
+}

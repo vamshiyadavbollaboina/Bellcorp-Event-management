@@ -1,0 +1,124 @@
+.dashboard-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+  margin-bottom: 40px;
+  border-bottom: 2px solid #f1f3f5;
+  padding-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.dashboard-header p {
+  color: #636e72;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #2d3436;
+}
+
+.icon-blue { color: #0984e3; }
+.icon-gray { color: #b2bec3; }
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-item {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.event-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-color: #0984e3;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.event-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3436;
+  text-decoration: none;
+}
+
+.event-name:hover { color: #0984e3; }
+
+.event-location-text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #b2bec3;
+}
+
+.event-date-badge {
+  background: #f0f7ff;
+  color: #0984e3;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Past Events */
+.event-item.past {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.event-item.past .event-date-badge {
+  background: #e9ecef;
+  color: #636e72;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 20px;
+  color: #636e72;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 15px;
+  color: #b2bec3;
+}
