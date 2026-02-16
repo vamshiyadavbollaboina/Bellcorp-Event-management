@@ -1,95 +1,87 @@
-Bellcorp Event Management System (MERN)
-A full-stack Event Management platform that allows users to explore, register for, and manage events. Built with the MERN stack (MongoDB, Express, React, Node.js), featuring secure JWT authentication and real-time seat availability tracking.
+# Bellcorp Event Management System (MERN)
 
-🚀 Features
-User Experience
-Dynamic Discovery: Search events by name and filter by category (Tech, Workshop, Music, etc.) with debounce optimization.
+Developed by **Bollaboina Vamshi Yadav**, this is a full-stack MERN application designed for seamless event discovery and secure registration management.
 
-Detailed Briefs: Dedicated event pages showing descriptions, location, date, and real-time seat capacity.
 
-Personalized Dashboard: Manage your schedule with categorized "Upcoming" and "Past" events.
 
-Smart Alerts: Comprehensive validation for:
+## 🚀 Key Features
 
-Guest login requirements.
+### **User Interface & Experience**
+* **Dynamic Search:** Real-time event filtering by name and category (Tech, Workshop, Health, etc.).
+* **Event Details:** Brief descriptions, location, date, and live seat availability for every event.
+* **Management Dashboard:** A personalized hub to track "Upcoming" and "Past" registrations.
+* **Interactive Alerts:** Comprehensive browser alerts for successful actions and validation errors.
 
-Duplicate registration prevention.
+### **Security & Validation Logic**
+* **Guest Protection:** Alerts users to "Please login first" if they try to register while logged out.
+* **JWT Auth:** Secure session management using JSON Web Tokens.
+* **Smart Validation:** Alerts for "User already exists," "Invalid Credentials," "Already registered," and "Event is full."
+* **Confirmation Guard:** "Are you sure?" prompts before deleting a registration to prevent accidental cancellations.
 
-Event capacity limits.
+---
 
-Account exists/Invalid credentials.
+## 🛠️ Tech Stack
 
-Security & Performance
-JWT Authentication: Secure sessions using JSON Web Tokens stored in cookies.
+* **Frontend:** React.js, Context API, Axios, React Router.
+* **Backend:** Node.js, Express.js.
+* **Database:** MongoDB (Mongoose ODM).
+* **Testing:** Postman API Suite.
 
-Protected Routes: Frontend guards preventing unauthorized access to the Dashboard and Details pages.
+---
 
-API Security: Custom backend middleware to verify user identity for every registration/cancellation.
+## 📂 Architecture Overview
 
-🛠️ Tech Stack
-Frontend: React, React Router, Context API, Axios, Material Design Icons.
+### **Backend (`/server`)**
+* `server.js`: Server configuration and MongoDB connection.
+* `Models/`: 
+    * `User.js`: Schema for account credentials.
+    * `Event.js`: Schema for event metadata and capacity.
+    * `Registration.js`: Junction model linking Users to Events.
+* `middleware/protect.js`: Custom JWT verification middleware.
+* `routes/`: API endpoints for Auth, Events, and Registrations.
 
-Backend: Node.js, Express.js.
 
-Database: MongoDB with Mongoose (Relational Schema Design).
 
-Authentication: JWT (JSON Web Tokens) & Bcrypt for password hashing.
+### **Frontend (`/client`)**
+* `context/AuthContext.js`: Global state management for user sessions.
+* `components/ProtectedRoute.js`: Higher-Order Component to guard private routes.
+* `pages/`: 
+    * `Home`: Event discovery with debounce search.
+    * `EventDetails`: Briefing and registration logic.
+    * `Dashboard`: Management hub for user events.
 
-Testing: Postman (Contract, Integration, and Performance Testing).
 
-📂 Project Structure
-Backend (/server)
-server.js: Entry point & DB connection.
 
-Models/: User, Event, and Registration (Junction) schemas.
+---
 
-middleware/protect.js: JWT verification gate.
+## 🧪 API Testing (Postman)
 
-routes/: Modular API endpoints for Auth, Events, and Registrations.
+The system was verified using a 5-level testing strategy:
+1.  **Auth Testing:** Verified Login/Register flows and JWT generation.
+2.  **Contract Testing:** Ensured JSON responses match frontend requirements.
+3.  **Integration Testing:** Tested the complete flow: `Login -> Auth Token -> Event Registration`.
+4.  **Security Testing:** Confirmed `401 Unauthorized` responses when tokens are missing.
+5.  **Performance Testing:** Used Postman Collection Runner to ensure stability under load.
 
-Frontend (/client)
-App.js: Routing hub with AuthProvider.
 
-context/AuthContext.js: Global user state management.
 
-ProtectedRoute.js: Route guard for authenticated views.
+---
 
-pages/: UI components for Home, Event Details, and Dashboard.
+## ⚙️ How to Run
 
-🧪 Testing with Postman
-The API underwent rigorous testing across 5 levels:
+1.  **Backend:**
+    * Navigate to `/server` -> `npm install`.
+    * Create `.env` (PORT, MONGO_URI, JWT_SECRET).
+    * `npm start`.
 
-Intro Testing: Verified 200 OK status and response times (< 500ms).
+2.  **Frontend:**
+    * Navigate to `/client` -> `npm install`.
+    * Create `.env` (REACT_APP_API_URL).
+    * `npm start`.
 
-Contract Testing: Ensured JSON schema consistency for the React frontend.
+---
 
-Mock Data: Tested registration with dynamic, unique user data.
+## 👤 Author
+**Bollaboina Vamshi Yadav** MERN Stack Developer
 
-Integration Testing: Validated the end-to-end flow: Login -> Get Token -> Register for Event.
-
-Performance Testing: Simulated concurrent users using the Collection Runner to ensure stability.
-
-⚙️ Installation & Setup
-Clone the repo:
-
-Bash
-git clone <your-repo-link>
-Setup Backend:
-
-Navigate to /server, run npm install.
-
-Create a .env file with PORT, MONGO_URI, and JWT_SECRET.
-
-Run npm start.
-
-Setup Frontend:
-
-Navigate to /client, run npm install.
-
-Create a .env file with REACT_APP_API_URL.
-
-Run npm start.
-
-👤 Author
-Bollaboina Vamshi Yadav Full-Stack Developer (MERN)
-
+---
